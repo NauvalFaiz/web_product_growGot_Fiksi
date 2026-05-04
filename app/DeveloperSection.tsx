@@ -4,17 +4,17 @@ import { Code, User, Camera } from "lucide-react";
 
 const developers = [
   {
-    name: "Ahmad GrowGot",
-    role: "Lead Product Designer",
-    image: "https://i.pravatar.cc/150?u=ahmad",
-    bio: "Visionary designer focused on sustainable urban agriculture solutions.",
+    name: "Muhammad Alif Arka Saeka Praya",
+    role: "Devlopers 01",
+    image: "public/Alif.jpg",
+    bio: "Cina Abadi",
     social: { github: "#", linkedin: "#", instagram: "#" }
   },
   {
-    name: "Siti Lestari",
-    role: "System Engineer",
-    image: "https://i.pravatar.cc/150?u=siti",
-    bio: "Expert in anaerobic composting systems and organic nutrient extraction.",
+    name: "Aveline Voleta Wardani",
+    role: "Full Stack Devlopers",
+    image: "public/Ave.jpg",
+    bio: "Gak Tau ah Ngantuk Soalnya",
     social: { github: "#", linkedin: "#", instagram: "#" }
   }
 ];
