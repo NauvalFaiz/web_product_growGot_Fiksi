@@ -6,14 +6,14 @@ const developers = [
   {
     name: "Muhammad Alif Arka Saeka Praya",
     role: "Devlopers 01",
-    image: "public/Alif.jpg",
+    image: "/Alif.jpg",
     bio: "Cina Abadi",
     social: { github: "#", linkedin: "#", instagram: "#" }
   },
   {
     name: "Aveline Voleta Wardani",
     role: "Full Stack Devlopers",
-    image: "public/Ave.jpg",
+    image: "/Ave.jpg",
     bio: "Gak Tau ah Ngantuk Soalnya",
     social: { github: "#", linkedin: "#", instagram: "#" }
   }
