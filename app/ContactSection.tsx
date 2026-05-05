@@ -72,53 +72,69 @@ export default function ContactSection() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Email</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>growmaggott@gmail.com</div>
-                </div>
+                <a 
+                  href="mailto:growmaggott@gmail.com"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Email</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>growmaggott@gmail.com</div>
+                  </div>
+                </a>
               </div>
               
               <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>WhatsApp</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>+62 812 3456 7890</div>
-                </div>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=-7.973305,112.651559" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Kantor</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>SMK Telkom Malang, Indonesia</div>
+                  </div>
+                </a>
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Kantor</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>SMK Telkom Malang, Indonesia</div>
-                </div>
+                <a 
+                  href="https://instagram.com/growmaggot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#E4405F", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <Instagram size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#E4405F", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Instagram</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@growmaggot</div>
+                  </div>
+                </a>
               </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#E4405F", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
-                  <Instagram size={24} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E4405F", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Instagram</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@growmaggot</div>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#000000", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
-                  <TikTok size={24} />
-                </div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "#000000", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>TikTok</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@Growgot</div>
-                </div>
+                <a 
+                  href="https://tiktok.com/@Growgot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#000000", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <TikTok size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#000000", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>TikTok</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@Growgot</div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
