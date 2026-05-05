@@ -62,7 +62,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Email</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>hello@growgot.com</div>
+                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>growmaggott@gmail.com</div>
                 </div>
               </div>
               
@@ -82,7 +82,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Kantor</div>
-                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>Jakarta, Indonesia</div>
+                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>SMK Telkom Malang, Indonesia</div>
                 </div>
               </div>
             </div>
