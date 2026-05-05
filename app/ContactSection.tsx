@@ -1,15 +1,21 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
-
-// TikTok Icon
 const TikTok = ({ size = 24 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
   </svg>
 );
 
-// Instagram Icon (FIX)
 const InstagramIcon = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
     <rect x="2" y="2" width="20" height="20" rx="5"/>
@@ -19,21 +25,21 @@ const InstagramIcon = ({ size = 24 }: { size?: number }) => (
 );
 
 export default function ContactSection() {
-  const sectionRef = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          (entry.target as HTMLElement)
-            .querySelectorAll(".reveal")
-            .forEach((el, i) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll(".reveal").forEach((el, i) => {
               setTimeout(() => el.classList.add("visible"), i * 150);
             });
-        }
-      });
-    }, { threshold: 0.1 });
-
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
@@ -42,58 +48,196 @@ export default function ContactSection() {
     <section
       id="contact"
       ref={sectionRef}
-      style={{ padding: "100px 2rem", background: "#f5f2eb" }}
+      style={{
+        padding: "100px 2rem",
+        background: "#f5f2eb",
+      }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 80 }}>
-
-          {/* INFO */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: 80 }} className="contact-grid">
+          {/* Info side */}
           <div className="reveal">
-            <h2>Ada Pertanyaan? Kami Siap Membantu.</h2>
+            <span style={{
+              display: "inline-block", background: "rgba(48,102,37,0.08)",
+              color: "#306625", padding: "6px 18px", borderRadius: 50,
+              fontSize: 12, fontWeight: 600, letterSpacing: 2,
+              textTransform: "uppercase", marginBottom: 16,
+            }}>
+              Hubungi Kami
+            </span>
+            <h2 style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "clamp(28px, 4vw, 48px)",
+              fontWeight: 700, color: "#1a1a1a", marginBottom: 24,
+            }}>
+              Ada Pertanyaan? <br /> Kami Siap Membantu.
+            </h2>
+            <p style={{ color: "#666", fontSize: 16, lineHeight: 1.8, marginBottom: 48 }}>
+              Tim GrowGot berkomitmen untuk memberikan solusi terbaik bagi pengelolaan sampah organik Anda. 
+              Jangan ragu untuk menghubungi kami untuk konsultasi atau pemesanan.
+            </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <a 
+                  href="mailto:growmaggott@gmail.com"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Email</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>growmaggott@gmail.com</div>
+                  </div>
+                </a>
+              </div>
+              
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=-7.976833,112.659022" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#306625", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Kantor</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>SMK Telkom Malang, Indonesia</div>
+                  </div>
+                </a>
+              </div>
 
-              {/* EMAIL */}
-              <a href="mailto:growmaggott@gmail.com" style={{ display: "flex", gap: 20 }}>
-                <Mail size={24} />
-                <span>growmaggott@gmail.com</span>
-              </a>
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <a 
+                  href="https://instagram.com/growmaggot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#E4405F", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <InstagramIcon size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#E4405F", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Instagram</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@growmaggot</div>
+                  </div>
+                </a>
+              </div>
 
-              {/* MAP */}
-              <a href="https://www.google.com/maps/search/?api=1&query=-7.973305,112.651559" target="_blank">
-                <MapPin size={24} />
-                <span>SMK Telkom Malang</span>
-              </a>
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <a 
+                  href="https://tiktok.com/@growgot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 20 }}
+                >
+                  <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#000000", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                    <TikTok size={24} />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#000000", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>TikTok</div>
+                    <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@growgot</div>
+                  </div>
+                </a>
+              </div>
+            </div>
 
-              {/* INSTAGRAM FIX */}
-              <a href="https://instagram.com/growmaggot" target="_blank">
-                <InstagramIcon size={24} />
-                <span>@growmaggot</span>
-              </a>
-
-              {/* TIKTOK */}
-              <a href="https://www.tiktok.com/@growgot" target="_blank">
-                <TikTok size={24} />
-                <span>@growgot</span>
-              </a>
-
+            {/* Map Embed */}
+            <div className="reveal" style={{ marginTop: 48 }}>
+              <div style={{ 
+                width: "100%", 
+                height: 250, 
+                borderRadius: 24, 
+                overflow: "hidden", 
+                boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+                border: "1px solid white"
+              }}>
+                <iframe 
+                  src="https://maps.google.com/maps?q=-7.976833,112.659022&z=16&output=embed"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
           </div>
 
-          {/* FORM */}
-          <div className="reveal">
-            <form style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              <input placeholder="Nama" />
-              <input placeholder="Email" />
-              <textarea placeholder="Pesan" />
-              <button type="submit">
-                Kirim <Send size={18} />
+          {/* Form side */}
+          <div className="reveal" style={{ 
+            background: "white", 
+            padding: 48, 
+            borderRadius: 32, 
+            boxShadow: "0 20px 60px rgba(48,102,37,0.08)",
+            border: "1px solid rgba(48,102,37,0.05)"
+          }}>
+            <form style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", marginLeft: 4 }}>Nama Lengkap</label>
+                  <input type="text" placeholder="John Doe" style={{ padding: "14px 20px", borderRadius: 12, border: "1px solid #eee", background: "#f9f9f9", fontSize: 15, outline: "none" }} />
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", marginLeft: 4 }}>Email</label>
+                  <input type="email" placeholder="john@example.com" style={{ padding: "14px 20px", borderRadius: 12, border: "1px solid #eee", background: "#f9f9f9", fontSize: 15, outline: "none" }} />
+                </div>
+              </div>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <label style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", marginLeft: 4 }}>Subjek</label>
+                <input type="text" placeholder="Tanya stok produk" style={{ padding: "14px 20px", borderRadius: 12, border: "1px solid #eee", background: "#f9f9f9", fontSize: 15, outline: "none" }} />
+              </div>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <label style={{ fontSize: 13, fontWeight: 600, color: "#1a1a1a", marginLeft: 4 }}>Pesan</label>
+                <textarea rows={5} placeholder="Halo Tim GrowGot..." style={{ padding: "14px 20px", borderRadius: 12, border: "1px solid #eee", background: "#f9f9f9", fontSize: 15, outline: "none", resize: "none" }}></textarea>
+              </div>
+
+              <button
+                type="submit"
+                style={{
+                  background: "linear-gradient(135deg, #306625, #4a9a3a)",
+                  color: "white",
+                  padding: "16px",
+                  borderRadius: 12,
+                  border: "none",
+                  fontWeight: 600,
+                  fontSize: 16,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 10,
+                  marginTop: 8,
+                  transition: "all 0.3s ease",
+                  boxShadow: "0 10px 20px rgba(48,102,37,0.2)"
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 15px 30px rgba(48,102,37,0.3)";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 10px 20px rgba(48,102,37,0.2)";
+                }}
+              >
+                Kirim Pesan <Send size={18} />
               </button>
             </form>
           </div>
-
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 992px) {
+          .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+      `}</style>
     </section>
   );
 }

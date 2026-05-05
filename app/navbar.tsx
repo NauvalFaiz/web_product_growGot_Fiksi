@@ -5,7 +5,7 @@ import { Menu, X, Leaf } from "lucide-react";
 const links = [
   { href: "/#home", label: "Home" },
   { href: "/#product", label: "Product" },
-  { href: "/#ebook", label: "E-Book" },
+  { href: "/#ebook", label: "Tata Cara Pembuatan" },
   { href: "/#developer", label: "Developer" },
   { href: "/#contact", label: "Contact" },
 ];

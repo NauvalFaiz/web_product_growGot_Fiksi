@@ -1,21 +1,33 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Code, User, Camera } from "lucide-react";
+
+const InstagramIcon = ({ size = 24 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="18" cy="6" r="1" fill="currentColor"/>
+  </svg>
+);
+const LinkedinIcon = ({ size = 24 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1s2.5 1.12 2.5 2.5zM.22 8.5h4.52V24H.22zM8.56 8.5h4.34v2.1h.06c.6-1.14 2.06-2.34 4.24-2.34 4.54 0 5.38 2.98 5.38 6.86V24h-4.52v-7.9c0-1.88-.04-4.3-2.62-4.3-2.62 0-3.02 2.04-3.02 4.16V24H8.56z"/>
+  </svg>
+);
 
 const developers = [
   {
     name: "Muhammad Alif Arka Saeka Praya",
-    role: "Devlopers 01",
+    role: "Game Dev",
     image: "/Alif.jpg",
-    bio: "Cina Abadi",
-    social: { github: "#", linkedin: "#", instagram: "#" }
+    bio: "COO",
+    social: { instagram: "https://www.instagram.com/arkka_x" }
   },
   {
     name: "Aveline Voleta Wardani",
-    role: "Full Stack Devlopers",
+    role: "Full Stack Developers",
     image: "/Ave.jpg",
-    bio: "Gak Tau ah Ngantuk Soalnya",
-    social: { github: "#", linkedin: "#", instagram: "#" }
+    bio: "Founder CEO",
+    social: { linkedin: "https://www.linkedin.com/in/aveline-voleta-wardani-6288453a6/", instagram: "https://www.instagram.com/avelinewardani" }
   }
 ];
 
@@ -113,9 +125,16 @@ export default function DeveloperSection() {
               <p style={{ color: "#666", lineHeight: 1.7, fontSize: 15, marginBottom: 24 }}>{dev.bio}</p>
               
               <div style={{ display: "flex", justifyContent: "center", gap: 16 }}>
-                <a href={dev.social.github} style={{ color: "#aaa", transition: "color 0.3s" }} onMouseEnter={e => e.currentTarget.style.color = "#306625"} onMouseLeave={e => e.currentTarget.style.color = "#aaa"}><Code size={20} /></a>
-                <a href={dev.social.linkedin} style={{ color: "#aaa", transition: "color 0.3s" }} onMouseEnter={e => e.currentTarget.style.color = "#306625"} onMouseLeave={e => e.currentTarget.style.color = "#aaa"}><User size={20} /></a>
-                <a href={dev.social.instagram} style={{ color: "#aaa", transition: "color 0.3s" }} onMouseEnter={e => e.currentTarget.style.color = "#306625"} onMouseLeave={e => e.currentTarget.style.color = "#aaa"}><Camera size={20} /></a>
+                {dev.social.linkedin && (
+                  <a href={dev.social.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "#aaa", transition: "color 0.3s" }} onMouseEnter={e => e.currentTarget.style.color = "#306625"} onMouseLeave={e => e.currentTarget.style.color = "#aaa"}>
+                    <LinkedinIcon size={20} />
+                  </a>
+                )}
+                {dev.social.instagram && (
+                  <a href={dev.social.instagram} target="_blank" rel="noopener noreferrer" style={{ color: "#aaa", transition: "color 0.3s" }} onMouseEnter={e => e.currentTarget.style.color = "#E4405F"} onMouseLeave={e => e.currentTarget.style.color = "#aaa"}>
+                    <InstagramIcon size={20} />
+                  </a>
+                )}
               </div>
             </div>
           ))}
