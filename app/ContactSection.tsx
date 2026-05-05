@@ -1,6 +1,21 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram } from "lucide-react";
+
+const TikTok = ({ size = 24 }: { size?: number }) => (
+  <svg 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -83,6 +98,26 @@ export default function ContactSection() {
                 <div>
                   <div style={{ fontSize: 13, fontWeight: 700, color: "#306625", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Kantor</div>
                   <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>SMK Telkom Malang, Indonesia</div>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#E4405F", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                  <Instagram size={24} />
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: "#E4405F", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>Instagram</div>
+                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@growmaggot</div>
+                </div>
+              </div>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                <div style={{ width: 52, height: 52, background: "white", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", color: "#000000", boxShadow: "0 8px 20px rgba(0,0,0,0.05)" }}>
+                  <TikTok size={24} />
+                </div>
+                <div>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: "#000000", textTransform: "uppercase", letterSpacing: 1, marginBottom: 4 }}>TikTok</div>
+                  <div style={{ fontSize: 18, color: "#1a1a1a", fontWeight: 500 }}>@Growgot</div>
                 </div>
               </div>
             </div>
