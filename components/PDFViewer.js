@@ -78,7 +78,7 @@ export default function PDFViewer() {
         <div className="absolute inset-0 bg-[#3d2517] rounded-lg shadow-[0_50px_100px_-20px_rgba(0,0,0,0.9)] transform scale-[1.03] -z-10 border border-white/5 ring-4 ring-[#1a0f0a]/50"></div>
         
         <Document
-          file="/ebook/Ebook.pdf"
+          file="/ebook/EbookRevisi.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
           onLoadError={(err) => {
             console.error("PDF Load Error:", err);
@@ -222,4 +222,4 @@ export default function PDFViewer() {
       `}</style>
     </div>
   );
-}
+}

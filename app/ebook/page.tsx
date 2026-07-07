@@ -11,7 +11,7 @@ const PDFViewer = dynamic(() => import("../../components/PDFViewer"), {
       display: "flex", 
       justifyContent: "center", 
       alignItems: "center", 
-      height: "100vh",
+      height: "50vh",
       background: "#f5f2eb",
       color: "#306625"
     }}>
@@ -26,7 +26,7 @@ export default function EBookPage() {
     <main style={{ background: "#f5f2eb", minHeight: "100vh" }}>
       <Navbar />
       
-      <div style={{ padding: "100px 2rem 40px" }}>
+      <div style={{ padding: "100px 1rem 40px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", marginBottom: 32 }}>
           <Link href="/#home" style={{ 
             display: "inline-flex", 
@@ -36,7 +36,7 @@ export default function EBookPage() {
             textDecoration: "none", 
             fontWeight: 600,
             fontSize: 14,
-            padding: "8px 16px",
+            padding: "20px 16px",
             borderRadius: 50,
             background: "rgba(48,102,37,0.05)",
             transition: "all 0.2s ease"
